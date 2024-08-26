@@ -94,6 +94,9 @@
 		FA3E5CB52C7C327900DC8334 /* MyNotes */ = {
 			isa = PBXGroup;
 			children = (
+				FA3E5CE22C7C329A00DC8334 /* ViewModel */,
+				FA3E5CE12C7C329200DC8334 /* Views */,
+				FA3E5CE02C7C328B00DC8334 /* Model */,
 				FA3E5CB62C7C327900DC8334 /* MyNotesApp.swift */,
 				FA3E5CB82C7C327900DC8334 /* ContentView.swift */,
 				FA3E5CBA2C7C328000DC8334 /* Assets.xcassets */,
@@ -125,6 +128,27 @@
 				FA3E5CD32C7C328100DC8334 /* MyNotesUITestsLaunchTests.swift */,
 			);
 			path = MyNotesUITests;
+			sourceTree = "<group>";
+		};
+		FA3E5CE02C7C328B00DC8334 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FA3E5CE12C7C329200DC8334 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FA3E5CE22C7C329A00DC8334 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
