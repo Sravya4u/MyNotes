@@ -1,0 +1,16 @@
+[
+        {
+            "id": 6381,
+            "uid": "da5e2467-1557-49ad-bfee-89d2c7daaa16",
+            "credit_card_number": "1228-1221-1221-1431",
+            "credit_card_expiry_date": "2026-08-15",
+            "credit_card_type": "jcb"
+        },
+        {
+            "id": 6918,
+            "uid": "35ff5688-c453-4cdf-b774-e5d8d7a3dab5",
+            "credit_card_number": "1211-1221-1234-2201",
+            "credit_card_expiry_date": "2028-08-14",
+            "credit_card_type": "maestro"
+        }
+]

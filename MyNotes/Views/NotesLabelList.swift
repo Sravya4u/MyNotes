@@ -54,14 +54,15 @@ struct NotesLabelList: View {
                     NoLabelsView()
                 } else {
                     List(selection: $selectedLabels) {
-                        ForEach(viewModel.notes) { note in
-                            NotesLabelItem(label: note.categoryName, noteCount: 1)
-                                .tag(note.id)
+                        ForEach(viewModel.groupedLabels().keys.sorted(), id: \.self) { categoryName in
+                         NotesLabelItem(label:categoryName, noteCount: (viewModel.groupedLabels()[categoryName]?.count ?? 0))
+                               // .tag(id)
+                            
                         }
                     }
                     .environment(\.editMode, isEditing ? .constant(.active) : .constant(.inactive))
-                    .background(Color.yellow.opacity(0.01)) // Set the list background color to light green
-                    .scrollContentBackground(.hidden) // Ensure the background color is applied
+                    //.background(Color.blue.opacity(0.01)) // Set the list background color to light green
+                    //.scrollContentBackground(.hidden) // Ensure the background color is applied
                                     
                 }
 
@@ -93,7 +94,7 @@ struct NotesLabelList: View {
                 }
                 .padding(.bottom, 20)
             }
-            .background(Color.yellow.opacity(0.1))
+            .background(Color.blue.opacity(0.1))
             .sheet(isPresented: $isPresentingLabelSheet) {
                 LabelSheet(isPresented: $isPresentingLabelSheet, viewModel: viewModel)
             }

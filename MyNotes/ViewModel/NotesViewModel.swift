@@ -12,18 +12,33 @@ class NotesViewModel: ObservableObject {
     private let notesKey = "NotesData"
 
     init() {
-        loadNotes()
+        fetchNotes()
+    }
+    
+    // Construct the URL for loading mock cards
+    private func mockNotesURL() -> URL? {
+      return Bundle.main.url(forResource: "NotesMock.json", withExtension: nil)
     }
 
-    func loadNotes() {
-        if let data = UserDefaults.standard.data(forKey: notesKey),
-           let savedNotes = try? JSONDecoder().decode([Note].self, from: data) {
-            self.notes = savedNotes
-        } else {
+    ///Fetches notes from server or from mock json file
+    func fetchNotes() -> [Note] {
+        guard let url = mockNotesURL() else {
+            print("mockNotes.json file not found")
             let initialNote = Note(categoryName: "General", textContent: "Your First Note")
             notes.append(initialNote)
-            saveNotes()
+            return notes
         }
+        do {
+            let data = try Data(contentsOf: url)
+            let decoder = JSONDecoder()
+           // decoder.dateDecodingStrategy = .iso8601
+            notes = try decoder.decode([Note].self, from: data)
+            print(notes)
+        } catch {
+            print("Failed to load notes: \(error.localizedDescription)")
+        }
+       // saveNotes()
+        return notes
     }
 
     func saveNotes() {
@@ -48,5 +63,9 @@ class NotesViewModel: ObservableObject {
     func deleteAllNotes() {
         notes.removeAll()
         saveNotes()
+    }
+    
+    func groupedLabels() -> [String: [Note]] {
+        Dictionary(grouping: notes, by: { $0.categoryName })
     }
 }

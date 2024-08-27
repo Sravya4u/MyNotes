@@ -14,6 +14,15 @@
 		FA3E5CC82C7C328100DC8334 /* MyNotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E5CC72C7C328100DC8334 /* MyNotesTests.swift */; };
 		FA3E5CD22C7C328100DC8334 /* MyNotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E5CD12C7C328100DC8334 /* MyNotesUITests.swift */; };
 		FA3E5CD42C7C328100DC8334 /* MyNotesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E5CD32C7C328100DC8334 /* MyNotesUITestsLaunchTests.swift */; };
+		FA3E5CE42C7C775A00DC8334 /* NotesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E5CE32C7C775A00DC8334 /* NotesList.swift */; };
+		FA3E5CE62C7C77CB00DC8334 /* NotesItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E5CE52C7C77CB00DC8334 /* NotesItem.swift */; };
+		FA3E5CE82C7C85B900DC8334 /* NotesLabelList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E5CE72C7C85B900DC8334 /* NotesLabelList.swift */; };
+		FA3E5CEA2C7C863A00DC8334 /* NotesLabelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E5CE92C7C863A00DC8334 /* NotesLabelItem.swift */; };
+		FA3E5CEC2C7C8C1400DC8334 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E5CEB2C7C8C1400DC8334 /* Notes.swift */; };
+		FA3E5CEE2C7CA21B00DC8334 /* LabelSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E5CED2C7CA21B00DC8334 /* LabelSheet.swift */; };
+		FA3E5CF22C7D6C2A00DC8334 /* NotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E5CF12C7D6C2A00DC8334 /* NotesViewModel.swift */; };
+		FA3E5CF42C7D6C5D00DC8334 /* NoLabelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E5CF32C7D6C5D00DC8334 /* NoLabelsView.swift */; };
+		FA3E5CF82C7E5BD100DC8334 /* NotesMock.json in Sources */ = {isa = PBXBuildFile; fileRef = FA3E5CF72C7E5BD100DC8334 /* NotesMock.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +53,16 @@
 		FA3E5CCD2C7C328100DC8334 /* MyNotesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyNotesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA3E5CD12C7C328100DC8334 /* MyNotesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotesUITests.swift; sourceTree = "<group>"; };
 		FA3E5CD32C7C328100DC8334 /* MyNotesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FA3E5CE32C7C775A00DC8334 /* NotesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesList.swift; sourceTree = "<group>"; };
+		FA3E5CE52C7C77CB00DC8334 /* NotesItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesItem.swift; sourceTree = "<group>"; };
+		FA3E5CE72C7C85B900DC8334 /* NotesLabelList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesLabelList.swift; sourceTree = "<group>"; };
+		FA3E5CE92C7C863A00DC8334 /* NotesLabelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesLabelItem.swift; sourceTree = "<group>"; };
+		FA3E5CEB2C7C8C1400DC8334 /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
+		FA3E5CED2C7CA21B00DC8334 /* LabelSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelSheet.swift; sourceTree = "<group>"; };
+		FA3E5CF12C7D6C2A00DC8334 /* NotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModel.swift; sourceTree = "<group>"; };
+		FA3E5CF32C7D6C5D00DC8334 /* NoLabelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoLabelsView.swift; sourceTree = "<group>"; };
+		FA3E5CF52C7DE60500DC8334 /* mockNotes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mockNotes.json; sourceTree = "<group>"; };
+		FA3E5CF72C7E5BD100DC8334 /* NotesMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NotesMock.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +113,8 @@
 		FA3E5CB52C7C327900DC8334 /* MyNotes */ = {
 			isa = PBXGroup;
 			children = (
+				FA3E5CF62C7E46D600DC8334 /* DataLayer */,
+				FA3E5CF52C7DE60500DC8334 /* mockNotes.json */,
 				FA3E5CE22C7C329A00DC8334 /* ViewModel */,
 				FA3E5CE12C7C329200DC8334 /* Views */,
 				FA3E5CE02C7C328B00DC8334 /* Model */,
@@ -101,6 +122,7 @@
 				FA3E5CB82C7C327900DC8334 /* ContentView.swift */,
 				FA3E5CBA2C7C328000DC8334 /* Assets.xcassets */,
 				FA3E5CBC2C7C328000DC8334 /* Preview Content */,
+				FA3E5CF72C7E5BD100DC8334 /* NotesMock.json */,
 			);
 			path = MyNotes;
 			sourceTree = "<group>";
@@ -133,6 +155,7 @@
 		FA3E5CE02C7C328B00DC8334 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FA3E5CEB2C7C8C1400DC8334 /* Notes.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -140,6 +163,12 @@
 		FA3E5CE12C7C329200DC8334 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FA3E5CE32C7C775A00DC8334 /* NotesList.swift */,
+				FA3E5CE52C7C77CB00DC8334 /* NotesItem.swift */,
+				FA3E5CE72C7C85B900DC8334 /* NotesLabelList.swift */,
+				FA3E5CE92C7C863A00DC8334 /* NotesLabelItem.swift */,
+				FA3E5CED2C7CA21B00DC8334 /* LabelSheet.swift */,
+				FA3E5CF32C7D6C5D00DC8334 /* NoLabelsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -147,8 +176,16 @@
 		FA3E5CE22C7C329A00DC8334 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FA3E5CF12C7D6C2A00DC8334 /* NotesViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FA3E5CF62C7E46D600DC8334 /* DataLayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataLayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,8 +318,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA3E5CEC2C7C8C1400DC8334 /* Notes.swift in Sources */,
 				FA3E5CB92C7C327900DC8334 /* ContentView.swift in Sources */,
+				FA3E5CEA2C7C863A00DC8334 /* NotesLabelItem.swift in Sources */,
+				FA3E5CE42C7C775A00DC8334 /* NotesList.swift in Sources */,
+				FA3E5CEE2C7CA21B00DC8334 /* LabelSheet.swift in Sources */,
 				FA3E5CB72C7C327900DC8334 /* MyNotesApp.swift in Sources */,
+				FA3E5CF82C7E5BD100DC8334 /* NotesMock.json in Sources */,
+				FA3E5CF42C7D6C5D00DC8334 /* NoLabelsView.swift in Sources */,
+				FA3E5CF22C7D6C2A00DC8334 /* NotesViewModel.swift in Sources */,
+				FA3E5CE62C7C77CB00DC8334 /* NotesItem.swift in Sources */,
+				FA3E5CE82C7C85B900DC8334 /* NotesLabelList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
