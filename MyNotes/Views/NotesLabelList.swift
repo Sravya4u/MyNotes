@@ -45,25 +45,20 @@ struct NotesLabelList: View {
                         }
                     } else {
                         Spacer()
-                            .frame(width: 50)
+                            .frame(width: 50) // Maintain balance with the "Done" button
                     }
                 }
 
-                if viewModel.notes.isEmpty {
+                if viewModel.groupedLabels().isEmpty {
                     NoLabelsView()
                 } else {
-                    List {
+                    List(selection: $selectedLabels) {
                         ForEach(viewModel.groupedLabels().keys.sorted(), id: \.self) { categoryName in
-                            let noteIds = viewModel.groupedLabels()[categoryName]?.compactMap { $0.id } ?? []
-                            let isSelected = noteIds.contains { selectedLabels.contains($0) }
-                            
-                            NotesLabelItem(label: categoryName, noteCount: noteIds.count, isSelected: isSelected)
-                                .onTapGesture {
-                                    if isEditing {
-                                        toggleSelection(for: noteIds)
-                                    }
-                                }
-                                .tag(noteIds.first ?? UUID())
+                            NavigationLink(destination: NotesList(categoryName: categoryName)
+                                .environmentObject(viewModel)) {
+                                NotesLabelItem(label: categoryName, noteCount: (viewModel.groupedLabels()[categoryName]?.count ?? 0))
+                            }
+                            .tag(categoryName) // Ensure correct tagging
                         }
                     }
                     .environment(\.editMode, isEditing ? .constant(.active) : .constant(.inactive))
@@ -93,7 +88,7 @@ struct NotesLabelList: View {
                         }
                         .padding(.trailing, 20)
                     }
-                }
+                } 
                 .padding(.bottom, 20)
             }
             .background(Color.blue.opacity(0.1))
@@ -109,16 +104,6 @@ struct NotesLabelList: View {
                     }
                     .padding(.leading, 20)
                 }
-            }
-        }
-    }
-
-    private func toggleSelection(for noteIds: [UUID]) {
-        for id in noteIds {
-            if selectedLabels.contains(id) {
-                selectedLabels.remove(id)
-            } else {
-                selectedLabels.insert(id)
             }
         }
     }
@@ -140,5 +125,6 @@ struct NotesLabelList: View {
 struct NotesLabelList_Previews: PreviewProvider {
     static var previews: some View {
         NotesLabelList()
+            .environmentObject(NotesViewModel())
     }
 }

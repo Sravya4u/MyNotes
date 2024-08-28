@@ -23,6 +23,8 @@
 		FA3E5CF22C7D6C2A00DC8334 /* NotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E5CF12C7D6C2A00DC8334 /* NotesViewModel.swift */; };
 		FA3E5CF42C7D6C5D00DC8334 /* NoLabelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E5CF32C7D6C5D00DC8334 /* NoLabelsView.swift */; };
 		FA3E5CFC2C7E64EE00DC8334 /* mockNotes.json in Resources */ = {isa = PBXBuildFile; fileRef = FA3E5CFB2C7E64ED00DC8334 /* mockNotes.json */; };
+		FA3E5CFE2C7F2EB300DC8334 /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E5CFD2C7F2EB200DC8334 /* NotesView.swift */; };
+		FA3E5D002C7F2FF000DC8334 /* NoNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E5CFF2C7F2FF000DC8334 /* NoNotesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		FA3E5CF12C7D6C2A00DC8334 /* NotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModel.swift; sourceTree = "<group>"; };
 		FA3E5CF32C7D6C5D00DC8334 /* NoLabelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoLabelsView.swift; sourceTree = "<group>"; };
 		FA3E5CFB2C7E64ED00DC8334 /* mockNotes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mockNotes.json; sourceTree = "<group>"; };
+		FA3E5CFD2C7F2EB200DC8334 /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
+		FA3E5CFF2C7F2FF000DC8334 /* NoNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNotesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +171,8 @@
 				FA3E5CE92C7C863A00DC8334 /* NotesLabelItem.swift */,
 				FA3E5CED2C7CA21B00DC8334 /* LabelSheet.swift */,
 				FA3E5CF32C7D6C5D00DC8334 /* NoLabelsView.swift */,
+				FA3E5CFD2C7F2EB200DC8334 /* NotesView.swift */,
+				FA3E5CFF2C7F2FF000DC8334 /* NoNotesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -322,7 +328,9 @@
 				FA3E5CEA2C7C863A00DC8334 /* NotesLabelItem.swift in Sources */,
 				FA3E5CE42C7C775A00DC8334 /* NotesList.swift in Sources */,
 				FA3E5CEE2C7CA21B00DC8334 /* LabelSheet.swift in Sources */,
+				FA3E5D002C7F2FF000DC8334 /* NoNotesView.swift in Sources */,
 				FA3E5CB72C7C327900DC8334 /* MyNotesApp.swift in Sources */,
+				FA3E5CFE2C7F2EB300DC8334 /* NotesView.swift in Sources */,
 				FA3E5CF42C7D6C5D00DC8334 /* NoLabelsView.swift in Sources */,
 				FA3E5CF22C7D6C2A00DC8334 /* NotesViewModel.swift in Sources */,
 				FA3E5CE62C7C77CB00DC8334 /* NotesItem.swift in Sources */,

@@ -19,7 +19,7 @@ struct LabelSheet: View {
                 List {
                     ForEach(categories, id: \.self) { category in
                         Button(action: {
-                            viewModel.addNote(categoryName: category)
+                            viewModel.addNote(categoryName: category, textContent: "")
                             isPresented = false
                         }) {
                             Text(category)
@@ -32,7 +32,7 @@ struct LabelSheet: View {
 
                 Button("Add Custom Label") {
                     if !customLabelName.isEmpty {
-                        viewModel.addNote(categoryName: customLabelName)
+                        viewModel.addNote(categoryName: customLabelName, textContent: "")
                         customLabelName = ""
                         isPresented = false
                     }
