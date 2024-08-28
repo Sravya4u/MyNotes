@@ -11,9 +11,9 @@ struct Note: Identifiable, Codable {
     var id: UUID
     var categoryName: String
     var textContent: String
-    var date: Date
+    var date: String
 
-    init(id: UUID = UUID(), categoryName: String, textContent: String, date: Date = Date()) {
+    init(id: UUID = UUID(), categoryName: String, textContent: String, date: String) {
         self.id = id
         self.categoryName = categoryName
         self.textContent = textContent

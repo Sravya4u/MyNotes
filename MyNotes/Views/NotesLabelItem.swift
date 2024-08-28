@@ -10,6 +10,7 @@ import SwiftUI
 struct NotesLabelItem: View {
     var label: String
     var noteCount: Int
+    var isSelected: Bool = false
 
     var body: some View {
         HStack {
@@ -27,8 +28,16 @@ struct NotesLabelItem: View {
 
             Text("\(noteCount)")
                 .padding(.trailing, 10)
+            
+            if isSelected {
+                Image(systemName: "checkmark.circle.fill")
+                    .foregroundColor(.blue)
+                    .padding(.trailing, 10)
+            }
         }
         .padding(.vertical, 10)
+        .background(isSelected ? Color.blue.opacity(0.2) : Color.clear)
+        .cornerRadius(10)
     }
 }
 

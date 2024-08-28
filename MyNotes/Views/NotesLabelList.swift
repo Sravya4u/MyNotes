@@ -32,8 +32,7 @@ struct NotesLabelList: View {
                         .frame(maxWidth: .infinity, alignment: .center)
 
                     Spacer()
-                    
-                    // Top right menu with "..." for selecting labels
+
                     if !isEditing {
                         Menu {
                             Button("Select Labels") {
@@ -46,29 +45,32 @@ struct NotesLabelList: View {
                         }
                     } else {
                         Spacer()
-                            .frame(width: 50) // Maintain balance with the "Done" button
+                            .frame(width: 50)
                     }
                 }
 
                 if viewModel.notes.isEmpty {
                     NoLabelsView()
                 } else {
-                    List(selection: $selectedLabels) {
+                    List {
                         ForEach(viewModel.groupedLabels().keys.sorted(), id: \.self) { categoryName in
-                         NotesLabelItem(label:categoryName, noteCount: (viewModel.groupedLabels()[categoryName]?.count ?? 0))
-                               // .tag(id)
+                            let noteIds = viewModel.groupedLabels()[categoryName]?.compactMap { $0.id } ?? []
+                            let isSelected = noteIds.contains { selectedLabels.contains($0) }
                             
+                            NotesLabelItem(label: categoryName, noteCount: noteIds.count, isSelected: isSelected)
+                                .onTapGesture {
+                                    if isEditing {
+                                        toggleSelection(for: noteIds)
+                                    }
+                                }
+                                .tag(noteIds.first ?? UUID())
                         }
                     }
                     .environment(\.editMode, isEditing ? .constant(.active) : .constant(.inactive))
-                    //.background(Color.blue.opacity(0.01)) // Set the list background color to light green
-                    //.scrollContentBackground(.hidden) // Ensure the background color is applied
-                                    
                 }
 
                 Spacer()
 
-                // Buttons at the bottom
                 HStack {
                     Spacer()
 
@@ -111,13 +113,21 @@ struct NotesLabelList: View {
         }
     }
 
-    // Function to delete all labels
+    private func toggleSelection(for noteIds: [UUID]) {
+        for id in noteIds {
+            if selectedLabels.contains(id) {
+                selectedLabels.remove(id)
+            } else {
+                selectedLabels.insert(id)
+            }
+        }
+    }
+
     private func deleteAllLabels() {
         viewModel.deleteAllNotes()
         selectedLabels.removeAll()
     }
 
-    // Function to delete selected labels
     private func deleteSelectedLabels() {
         for id in selectedLabels {
             viewModel.deleteNoteById(id: id)

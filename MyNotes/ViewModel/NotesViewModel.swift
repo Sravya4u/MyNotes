@@ -17,21 +17,21 @@ class NotesViewModel: ObservableObject {
     
     // Construct the URL for loading mock cards
     private func mockNotesURL() -> URL? {
-      return Bundle.main.url(forResource: "NotesMock.json", withExtension: nil)
+      return Bundle.main.url(forResource: "mockNotes.json", withExtension: nil)
     }
 
     ///Fetches notes from server or from mock json file
     func fetchNotes() -> [Note] {
         guard let url = mockNotesURL() else {
             print("mockNotes.json file not found")
-            let initialNote = Note(categoryName: "General", textContent: "Your First Note")
+            let initialNote = Note(categoryName: "General", textContent: "Your First Note", date : "2012-06-17")
             notes.append(initialNote)
             return notes
         }
         do {
             let data = try Data(contentsOf: url)
             let decoder = JSONDecoder()
-           // decoder.dateDecodingStrategy = .iso8601
+            decoder.dateDecodingStrategy = .iso8601
             notes = try decoder.decode([Note].self, from: data)
             print(notes)
         } catch {
@@ -48,7 +48,7 @@ class NotesViewModel: ObservableObject {
     }
 
     func addNote(categoryName: String) {
-        let newNote = Note(categoryName: categoryName, textContent: "")
+        let newNote = Note(categoryName: categoryName, textContent: "", date : "2018-06-17")
         notes.append(newNote)
         saveNotes()
     }
